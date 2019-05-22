@@ -8,10 +8,10 @@ namespace Elementary_Tasks_1
 {
     class UIBoard
     {
-        public static void BuildUI(string[] args)
+        public static void BuildUI()
         {
             const int RIGHT_ARGS = 3;
-            args = Environment.GetCommandLineArgs();
+            string[] args = Environment.GetCommandLineArgs();
             switch (args.Length)
 
             {

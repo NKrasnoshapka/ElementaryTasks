@@ -10,6 +10,18 @@ namespace Elementary_Tasks_2
     {
         static void Main(string[] args)
         {
+            try
+            {
+                UIConsole.BuildUI();
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

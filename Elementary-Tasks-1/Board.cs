@@ -24,6 +24,7 @@ namespace Elementary_Tasks_1
             private void SetCells()
             {
                 this.Cells = new Cell[Height, Width];
+
                 for (int height = 0; height < Height; height++)
                 {
                     for (int width = 0; width < Width; width++)
