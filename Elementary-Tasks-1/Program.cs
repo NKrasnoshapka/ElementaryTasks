@@ -10,7 +10,7 @@ namespace Elementary_Tasks_1
     {
         static void Main(string[] args)
         {
-            UIBoard.BuildUI();
+            UIBoard.BuildUI(args);
         }
     }
 }

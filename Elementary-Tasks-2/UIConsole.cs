@@ -8,93 +8,67 @@ namespace Elementary_Tasks_2
 {
     class UIConsole
     {
-        public static void BuildUI()
+        public static void BuildUI(string[] args)
         {
-            const int RIGHT_ARGS = 1;
-            string[] args = Environment.GetCommandLineArgs();
             bool Finish = true;
 
-            switch (args.Length)
+            do
             {
-                case RIGHT_ARGS:
-                    {
-                        do
-                        {
-                            Finish = false;
+                Finish = false;
 
-                            float heightFirstEnvelope;
-                            float widthFirstEnvelope;
-                            float heightSecondEnvelope;
-                            float widthSecondEnvelope;
+                float heightFirstEnvelope;
+                float widthFirstEnvelope;
+                float heightSecondEnvelope;
+                float widthSecondEnvelope;
 
-                            Console.WriteLine("Input height of first envelope:");
-                            bool success1 = float.TryParse(Console.ReadLine(), out heightFirstEnvelope);
-                            Console.WriteLine("Input width of first envelope:");    
-                            bool success2 = float.TryParse(Console.ReadLine(), out widthFirstEnvelope);
+                bool success = true;
 
-                            Console.WriteLine("Input height of second envelope:");
-                            bool success3 = float.TryParse(Console.ReadLine(), out heightSecondEnvelope);
-                            Console.WriteLine("Input width of second envelope:");
-                            bool success4 = float.TryParse(Console.ReadLine(), out widthSecondEnvelope);
+                Console.WriteLine("Input height of first envelope:");
+                success &= float.TryParse(Console.ReadLine(), out heightFirstEnvelope);
+                Console.WriteLine("Input width of first envelope:");
+                success &= float.TryParse(Console.ReadLine(), out widthFirstEnvelope);
 
-                            if ((success1 == true) && (success2 == true) && (success3 == true) && (success4 == true))
-                            {
-                                Envelope firstEnvelope = Envelope.EnvelopeInitialize(heightFirstEnvelope, widthFirstEnvelope);
-                                Envelope secondEnvelope = Envelope.EnvelopeInitialize(heightSecondEnvelope, widthSecondEnvelope);
-                                ComparisonResults(firstEnvelope, secondEnvelope);
-                            }
-                            else
-                                throw new FormatException("Please enter sides by numbers");
+                Console.WriteLine("Input height of second envelope:");
+                success &= float.TryParse(Console.ReadLine(), out heightSecondEnvelope);
+                Console.WriteLine("Input width of second envelope:");
+                success &= float.TryParse(Console.ReadLine(), out widthSecondEnvelope);
 
-                             Finish = Repeat();
-                        }
-                        while (Finish);
+                if (success)
+                {
+                    Envelope firstEnvelope = Envelope.EnvelopeInitialize(heightFirstEnvelope, widthFirstEnvelope);
+                    Envelope secondEnvelope = Envelope.EnvelopeInitialize(heightSecondEnvelope, widthSecondEnvelope);
+                    ComparisonResults(firstEnvelope, secondEnvelope);
+                }
+                else
+                    throw new FormatException("Please enter sides by numbers");
 
-                        break;
-                    }
-                default:
-                    {
-                        Instruction();
-                        break;
-                    }
+                Finish = Repeat();
             }
+            while (Finish);
+        }  
+    
 
-        }
-
-        private static void ComparisonResults(Envelope firstEnvelope, Envelope secondEnvelope)
-        {
-            if (firstEnvelope.CompareTo(secondEnvelope) == 1)
-            {
-                Console.WriteLine("Second envelope can be in first!");
-            }
-            else if (secondEnvelope.CompareTo(firstEnvelope) == 1)
-            {
-                Console.WriteLine("First envelope can be in second!");
-            }
-            else
-            {
-                Console.WriteLine("Envelopes cannot be nested");
-            }
-        }
-
-
-        private static void Instruction()
-        {
-            Console.WriteLine("...");
-        }
+          private static void ComparisonResults(Envelope firstEnvelope, Envelope secondEnvelope)
+          {
+              if (firstEnvelope.CompareTo(secondEnvelope) == 1)
+              {
+                  Console.WriteLine("Second envelope can be in first!");
+              }
+              else if (secondEnvelope.CompareTo(firstEnvelope) == 1)
+              {
+                  Console.WriteLine("First envelope can be in second!");
+              }
+              else
+              {
+                  Console.WriteLine("Envelopes cannot be nested");
+              }
+          }
 
         private static bool Repeat()
         {
             Console.WriteLine("To repeat type y/Y or yes/YES:");
             string answer = Console.ReadLine().ToLower();
-            if (answer == "y" | answer == "yes")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return answer == "y" || answer == "yes";
         }
     }
 }

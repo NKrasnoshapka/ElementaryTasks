@@ -1,0 +1,7 @@
+D:\SS\ElementaryTasks\Elementary-Tasks-3\obj\Debug\Elementary-Tasks-3.csprojAssemblyReference.cache
+D:\SS\ElementaryTasks\Elementary-Tasks-3\obj\Debug\Elementary-Tasks-3.csproj.CoreCompileInputs.cache
+D:\SS\ElementaryTasks\Elementary-Tasks-3\bin\Debug\Elementary-Tasks-3.exe.config
+D:\SS\ElementaryTasks\Elementary-Tasks-3\bin\Debug\Elementary-Tasks-3.exe
+D:\SS\ElementaryTasks\Elementary-Tasks-3\bin\Debug\Elementary-Tasks-3.pdb
+D:\SS\ElementaryTasks\Elementary-Tasks-3\obj\Debug\Elementary-Tasks-3.exe
+D:\SS\ElementaryTasks\Elementary-Tasks-3\obj\Debug\Elementary-Tasks-3.pdb

@@ -12,7 +12,7 @@ namespace Elementary_Tasks_2
         {
             try
             {
-                UIConsole.BuildUI();
+                UIConsole.BuildUI(args);
             }
             catch (ArgumentException ex)
             {
@@ -21,6 +21,10 @@ namespace Elementary_Tasks_2
             catch (FormatException ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex?.Message);
             }
         }
     }
