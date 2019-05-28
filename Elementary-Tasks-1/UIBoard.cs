@@ -10,9 +10,8 @@ namespace Elementary_Tasks_1
     {
         public static void BuildUI(string[] args)
         {
-            const int RIGHT_ARGS = 2;
+            const int RIGHT_ARGS = 1;
             switch (args.Length)
-
             {
                 case RIGHT_ARGS:
                     {

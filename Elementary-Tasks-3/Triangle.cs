@@ -40,7 +40,7 @@ namespace Elementary_Tasks_3
         }
         public override string ToString()
         {
-            return string.Format($"Triangle {this.TriangleName}: {this.GetSquare()}");
+            return string.Format($"[Triangle {this.TriangleName}]: {this.GetSquare()}");
         }
     }
 }

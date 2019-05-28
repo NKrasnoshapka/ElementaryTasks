@@ -8,6 +8,7 @@ namespace Elementary_Tasks_7_8
 {
     abstract class Sequence
     {
+
         public int LeftBorder { get; set; }
         public int RightBorder { get; set; }
 
