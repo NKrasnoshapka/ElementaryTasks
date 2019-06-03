@@ -6,29 +6,30 @@ using System.Threading.Tasks;
 
 namespace Elementary_Tasks_7_8
 {
-    class SquareSequence:Sequence
+    class SquareSequence : Sequence
     {
-        private SquareSequence(int leftBorder, int rightBorder) : base(leftBorder, rightBorder){}
+        private SquareSequence(int leftBorder, int rightBorder) : base(leftBorder, rightBorder) { }
 
-        public static SquareSequence SquareInitialize( int rightBorder)
+        public static SquareSequence SquareInitialize(int rightBorder)
         {
+            SquareSequence sequence = null;
+
             if (Validator.ValidSquare(rightBorder))
             {
-                return new SquareSequence(1, rightBorder);
+                sequence = new SquareSequence(1, rightBorder);
             }
-            else
-            {
-                throw new ArgumentException("Try again");
-            }
+
+            return sequence; 
         }
 
         public override IEnumerable<int> GetSequence()
         {
-            int natural_namber = 1;
-            while (Math.Pow(natural_namber, 2) < RightBorder)
+            int naturalNumber = 1;
+
+            while (naturalNumber * naturalNumber < RightBorder)// for
             {
-                yield return natural_namber;
-                natural_namber++;
+                yield return naturalNumber;
+                naturalNumber++;
             }
         }
     }

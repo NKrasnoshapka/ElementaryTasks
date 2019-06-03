@@ -53,4 +53,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>8 8</PreBuildEvent>
+  </PropertyGroup>
 </Project>

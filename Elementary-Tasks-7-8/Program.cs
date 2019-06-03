@@ -18,6 +18,10 @@ namespace Elementary_Tasks_7_8
             {
                 Console.WriteLine(ex.Message);
             }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex?.Message);
